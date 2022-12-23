@@ -10,8 +10,9 @@ print ("Olá, seja bem vindo!")
 print ("########################")
 
 n_choices = 5
+win = False
 
-while n_choices > 0:
+while n_choices > 0 and win is not True:
     print("Dica: " + words[choice_c])
     answer_user = input("Data: DDMMAAAA\n")
 
@@ -21,16 +22,20 @@ while n_choices > 0:
 
     if answer_user.isdigit():
         check = []
+        pontuation = 0
         for i in range(8):
             if answer_user[i] == choice_c[i]:
                 check.append("V")
+                pontuation = pontuation + 1
             else:
                 check.append("F")
-
         print("Resposta: \n")
         print("|".join(check))
         print(" |".join(answer_user))
         print("######################\n")
+
+        if pontuation == 8:
+            win = True
     else:
         print("Erro na entrada. A resposta deve ser uma data!")
         continue
