@@ -1,7 +1,7 @@
 import json
 import random
 
-f = open("word.json", encoding="utf8")
+f = open("words.json", encoding="utf8")
 
 words = json.load(f)
 choice_c = random.choice(list(words.keys()))
@@ -15,8 +15,10 @@ win = False
 while n_choices > 0 and win is not True:
     print("Dica: " + words[choice_c])
     answer_user = input("Data: DDMMAAAA\n")
+    print("######################")
 
-    if len(answer_user) != 8
+
+    if len(answer_user) != 8:
         print("Erro na entrada. A resposta deve conter 8 digitos.")
         continue
 
@@ -35,8 +37,14 @@ while n_choices > 0 and win is not True:
         print("######################\n")
 
         if pontuation == 8:
-            win = True
+            win = True            
     else:
         print("Erro na entrada. A resposta deve ser uma data!")
         continue
     n_choices = n_choices -1
+
+if win == True:
+    print("Vitoria!!!")
+else:
+    print("Derrota!!!")
+    print("A resposta era: " + choice_c)
