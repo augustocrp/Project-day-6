@@ -30,7 +30,7 @@ while n_choices > 0:
         print("Resposta: \n")
         print("|".join(check))
         print(" |".join(answer_user))
-        print("######################\n")
+        print("#####################\n")
     else:
         print("Erro na entrada. A resposta deve ser uma data!")
         continue
